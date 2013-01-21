@@ -43,6 +43,10 @@ color:				#125E18;
 text-align:			right;
 }
 
+.ok_green {
+color:				#125E18;
+}
+
 .ok_dark {
 background:			#125E18 url('../img/Left_Arrow_100x100.png') no-repeat left;
 color:				#B5FFBB;
@@ -53,6 +57,10 @@ text-align:			right;
 background:			#D98D8D url('../img/Left_Arrow_100x100.png') no-repeat left;
 color:				#5E1212;
 text-align:			right;
+}
+
+.no_red {
+color:				#5E1212;
 }
 
 .no_dark {

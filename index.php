@@ -17,23 +17,20 @@
 // Enter in your API Key
 // Get this from bitminter.com
 
-$API_Key	=	'################################';
+$API_Key = '2SNURODLOV52IPOVHZFITDD4WJJ1S13O';
 
 // Script Timeout in Seconds
 
-$Timeout	=	300;	// 5 Minutes
+$Timeout        =       300;    // 5 Minutes
 
 
 // Cache File Path (Must be writable / chmod 777)
-$Cache_File	=	'cache.txt';
+$Cache_File     =       'cache.txt';
 
 // END Configuration
 //////////////////////////////////////////////////
 
-
 include('cache.txt');
-
-// Boring Array Initilization
 
 $Fresh_Output	=	array();
 $Old_Output =	json_decode($Old_Output,true);
@@ -124,20 +121,14 @@ $User_Hashrate	=	$Output["hash_rate"];
 $BTC_Bal		=	number_format($Output['balances.BTC'],2);
 $NMC_Bal		=	number_format($Output['balances.NMC'],2);
 
-$Active_Workers	=	$Output["active_workers"];
+$Active_Workers	=	$Output["active_workers"].' ONLINE';
 $Total_Workers	=	Get_Workers($Output);
 
 
-if ($Active_Workers === 1) {
-	$Active_Workers	= $Output["active_workers"].' Worker Online';
-	$User_Status	=	"ok_dark";
-}
-elseif ($Output["active_workers"] > 1) {
-	$Active_Workers	= $Output["active_workers"].' Workers Online';
+if ($Output["active_workers"] >= 1) {
 	$User_Status	=	"ok_dark";
 }
 elseif ($Output["active_workers"] < 1){
-	$Active_Workers	= $Output["active_workers"].' Workers Online';
 	$User_Status	=	"no_dark";
 }
 
@@ -164,7 +155,7 @@ function Get_Percentage($acc, $rej) {
 			return number_format(($rej/$acc)*100,2)." %";
 		}
 		else {
-			return '0.0';
+			return '0.00 %';
 		}
 
 }
@@ -239,7 +230,7 @@ function Display_Workers($Workers,$Array) {
 		
 		echo	'	<div class="fourteen columns light_arrow">'."\n";
 		echo	'		<div class="worker_name">'."\n";
-		echo	'			<span class="tiny">WORKER NAME</span><br>'."\n";
+		echo	'			<span class="tiny">WORKER</span><br>'."\n";
 		echo	'			'.$worker_name."\n";
 		echo	'		</div>'."\n";
 		echo	'	</div>'."\n";
@@ -258,32 +249,16 @@ function Display_Workers($Workers,$Array) {
 		
 		echo	'		<div class="seven columns">'."\n";
 		echo	'			<div class="btc_arrow"><b>BTC STATS</b></div>'."\n";
-		echo	'			<div class="staggered">Total Shares Accepted: <span style="float:right;">'.$worker_btc_t_acc.'</span></div>'."\n";
-		echo	'			<div class="staggered">Total Shares Rejected: <span style="float:right;">'.$worker_btc_t_rej.'</span></div>'."\n";
-		echo	'			<div class="staggered">Total Shares Rejected Percentage: <span style="float:right;">'.$worker_btc_t_per.'</span></div>'."\n";
-		
-		echo	'			<div class="staggered">Checkpoint Shares Accepted: <span style="float:right;">'.$worker_btc_c_acc.'</span></div>'."\n";
-		echo	'			<div class="staggered">Checkpoint Shares Rejected: <span style="float:right;">'.$worker_btc_c_rej.'</span></div>'."\n";
-		echo	'			<div class="staggered">Checkpoint Shares Rejected Percentage: <span style="float:right;">'.$worker_btc_c_per.'</span></div>'."\n";
-		
-		echo	'			<div class="staggered">Round Shares Accepted: <span style="float:right;">'.$worker_btc_r_acc.'</span></div>'."\n";
-		echo	'			<div class="staggered">Round Shares Rejected: <span style="float:right;">'.$worker_btc_r_rej.'</span></div>'."\n";
-		echo	'			<div class="staggered">Round Shares Rejected Percentage: <span style="float:right;">'.$worker_btc_r_per.'</span></div>'."\n";
+		echo	'			<div class="staggered">TOTAL ACCEPTED / REJECTED / PRECENT <span style="float:right;"><span class="ok_green">'.$worker_btc_t_acc.'</span> / <span class="no_red">'.$worker_btc_t_rej.'</span> / '.$worker_btc_t_per.'</span></div>'."\n";
+		echo	'			<div class="staggered">ROUND ACCEPTED / REJECTED / PERCENT <span style="float:right;"><span class="ok_green">'.$worker_btc_r_acc.'</span> / <span class="no_red">'.$worker_btc_r_rej.'</span> / '.$worker_btc_r_per.'</span></div>'."\n";
+		echo	'			<div class="staggered">CHECKPOINT ACCEPTED / REJECTED / PERCENT <span style="float:right;"><span class="ok_green">'.$worker_btc_c_acc.'</span> / <span class="no_red">'.$worker_btc_c_rej.'</span> / '.$worker_btc_c_per.'</span></div>'."\n";
 		echo	'		</div>'."\n";
 		
 		echo	'		<div class="seven columns">'."\n";
 		echo	'			<div class="nmc_arrow"><b>NMC STATS</b></div>'."\n";
-		echo	'			<div class="staggered">Total Shares Accepted: <span style="float:right;">'.$worker_nmc_t_acc.'</span></div>'."\n";
-		echo	'			<div class="staggered">Total Shares Rejected: <span style="float:right;">'.$worker_nmc_t_rej.'</span></div>'."\n";
-		echo	'			<div class="staggered">Total Shares Rejected Percentage: <span style="float:right;">'.$worker_nmc_t_per.'</span></div>'."\n";
-		
-		echo	'			<div class="staggered">Checkpoint Shares Accepted: <span style="float:right;">'.$worker_nmc_c_acc.'</span></div>'."\n";
-		echo	'			<div class="staggered">Checkpoint Shares Rejected: <span style="float:right;">'.$worker_nmc_c_rej.'</span></div>'."\n";
-		echo	'			<div class="staggered">Checkpoint Shares Rejected Percentage: <span style="float:right;">'.$worker_nmc_c_per.'</span></div>'."\n";
-
-		echo	'			<div class="staggered">Round Shares Accepted: <span style="float:right;">'.$worker_nmc_r_acc.'</span></div>'."\n";
-		echo	'			<div class="staggered">Round Shares Rejected: <span style="float:right;">'.$worker_nmc_r_rej.'</span></div>'."\n";
-		echo	'			<div class="staggered">Round Shares Rejected Percentage: <span style="float:right;">'.$worker_nmc_r_per.'</span></div>'."\n";
+		echo	'			<div class="staggered">TOTAL ACCEPTED / REJECTED / PRECENT <span style="float:right;"><span class="ok_green">'.$worker_nmc_t_acc.'</span> / <span class="no_red">'.$worker_nmc_t_rej.'</span> / '.$worker_nmc_t_per.'</span></div>'."\n";
+		echo	'			<div class="staggered">ROUND ACCEPTED / REJECTED / PERCENT <span style="float:right;"><span class="ok_green">'.$worker_nmc_r_acc.'</span> / <span class="no_red">'.$worker_nmc_r_rej.'</span> / '.$worker_nmc_r_per.'</span></div>'."\n";
+		echo	'			<div class="staggered">CHECKPOINT ACCEPTED / REJECTED / PERCENT <span style="float:right;"><span class="ok_green">'.$worker_nmc_c_acc.'</span> / <span class="no_red">'.$worker_nmc_c_rej.'</span> / '.$worker_nmc_c_per.'</span></div>'."\n";		
 		echo	'		</div>'."\n";
 		
 		echo	'</div>'."\n";
@@ -342,19 +317,19 @@ function Display_Workers($Workers,$Array) {
     <div id="head" class="row">
         <div class="ten columns dark_arrow">
             <div class="user_name">
-                <span class="tiny">USER NAME</span><br>
+                <span class="tiny">USER</span><br>
                 <?php echo $User_Name; ?>
             </div>
 		</div>
         <div class="two columns btc_arrow">
             <div class="btc_bal">
-                <span class="tiny">BTC BAL</span><br>
+                <span class="tiny">BTC</span><br>
                 <?php echo $BTC_Bal; ?>
             </div>
         </div>
 		<div class="two columns nmc_arrow">
             <div class="nmc_bal">
-                <span class="tiny">NMC BAL</span><br>
+                <span class="tiny">NMC</span><br>
                 <?php echo $NMC_Bal; ?>
             </div>
 		</div>
