@@ -138,7 +138,6 @@ elseif ($Output["active_workers"] > 1) {
 }
 elseif ($Output["active_workers"] < 1){
 	$Active_Workers	= $Output["active_workers"].' Workers Online';
-	$Total_Workers	=	0;
 	$User_Status	=	"no_dark";
 }
 
