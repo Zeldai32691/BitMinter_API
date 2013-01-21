@@ -17,7 +17,7 @@
 // Enter in your API Key
 // Get this from bitminter.com
 
-$API_Key = '2SNURODLOV52IPOVHZFITDD4WJJ1S13O';
+$API_Key = '##################################';
 
 // Script Timeout in Seconds
 
