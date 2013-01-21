@@ -1,0 +1,176 @@
+/*=======================================================================
+
+	❤❤❤ Gumby by Digital Surgeons. ❤❤❤
+	
+	*** This is where you should keep all of your design specific styles ***
+ 
+ ========================================================================*/
+
+
+body,
+html {
+margin:				20px;
+padding:			0;
+
+font-family:		Arial, sans-serif;
+line-height:		90%;
+}
+
+.row {
+margin-top:		20px;
+}
+
+.columns div {
+padding:			5px;
+}
+
+.user_name,
+.btc_bal,
+.nmc_bal {
+padding:			5px 20px 5px 5px;
+}
+
+/* Colors */
+
+.dark {
+background-color:	#333;
+color:				#ccc;
+}
+
+.ok {
+background:			#B5FFBB url('../img/Left_Arrow_100x100.png') no-repeat left;
+color:				#125E18;
+text-align:			right;
+}
+
+.ok_dark {
+background:			#125E18 url('../img/Left_Arrow_100x100.png') no-repeat left;
+color:				#B5FFBB;
+text-align:			right;
+}
+
+.no {
+background:			#D98D8D url('../img/Left_Arrow_100x100.png') no-repeat left;
+color:				#5E1212;
+text-align:			right;
+}
+
+.no_dark {
+background:			#5E1212 url('../img/Left_Arrow_100x100.png') no-repeat left;
+color:				#D98D8D;
+text-align:			right;
+}
+
+.rej {
+float:				right;
+}
+
+.worker_stats {
+display:			none;
+}
+
+.worker_stats .btc_arrow,
+.worker_stats .nmc_arrow {
+font-weight:		bold;
+font-size:			75%;
+}
+
+.staggered {
+font-size:			50%;
+background-color:	#eee;
+margin-right:		12px;
+}
+
+.staggered:nth-child(even) {
+background-color:	#e0e0e0;
+}
+
+/* Fonts */
+
+#head div{
+font-weight:		bold;
+}
+
+.tiny {
+font-size:			50%;
+line-height:		90%;
+min-width:			40px;
+display:			inline-block;
+white-space:		nowrap;
+}
+
+.right {
+text-align:			right;
+}
+
+.center {
+text-align:			center;
+}
+
+
+.stats_left {
+width:				50%;
+padding:			0px		!important;
+float:				left;
+}
+
+.stats_right {
+width:				50%;
+padding:			0px		!important;
+float:				left;
+}
+/* Graphics and Images */
+
+.worker_name {
+	cursor:			pointer;
+}
+
+.light_arrow {
+background:			#ccc url('../img/Right_Arrow_100x100.png') no-repeat right;
+color:				#333;
+}
+
+.light_arrow:hover {
+background:			#bbb url('../img/Right_Arrow_100x100.png') no-repeat right;
+color:				#333;
+}
+
+.dark_arrow {
+background:			#333 url('../img/Right_Arrow_100x100.png') no-repeat right;
+color:				#ccc;
+}
+
+.btc_arrow {
+background:			#FF9900 url('../img/Right_Arrow_100x100.png') no-repeat right;
+color:				#1f1f1f;
+}
+
+.nmc_arrow {
+background:			#FFCC00 url('../img/Right_Arrow_100x100.png') no-repeat right;
+color:				#1f1f1f;
+}
+
+/* Debug */
+
+#debug {
+}
+
+#debug pre {
+padding:			20px;
+color:				#888;
+
+font-size:			10px;
+
+background:		url('../img/Hazard.png') left top #eee;
+}
+
+/* Mobile Display Fix */
+
+@media only screen and (max-width: 767px) {
+
+	.row {
+	margin-left:	-20px	!important;
+	text-align:		left	!important;
+	}
+
+}
