@@ -14,6 +14,7 @@ How To Setup
 2.  CHMOD the cache file so it's writeable (cd BitMinter_API then chmod 777 cache.txt).
 3.  Add your preffered API KEY and Timeout to the configuration portion of index.php.
 4.  I think that's pretty much it.
+5.  You can see the debug output from variables and arrays present by appending ?Debug=1 to the url (http://HOST/BitMinter_API/index.php?Debug=1).
 
 
 Anything Else
