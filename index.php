@@ -17,7 +17,8 @@
 // Enter in your API Key
 // Get this from bitminter.com
 
-$API_Key = '##################################';
+// $API_Key = '################################';
+$API_Key = 'WOKZ1ORDG5DNBSIOPFO5USRFIZJT4Q4X';
 
 // Script Timeout in Seconds
 
@@ -248,17 +249,17 @@ function Display_Workers($Workers,$Array) {
 		echo	'<div class="row worker_stats">'."\n";
 		
 		echo	'		<div class="seven columns">'."\n";
-		echo	'			<div class="btc_arrow"><b>BTC STATS</b></div>'."\n";
-		echo	'			<div class="staggered">TOTAL ACCEPTED / REJECTED / PRECENT <span style="float:right;"><span class="ok_green">'.$worker_btc_t_acc.'</span> / <span class="no_red">'.$worker_btc_t_rej.'</span> / '.$worker_btc_t_per.'</span></div>'."\n";
-		echo	'			<div class="staggered">ROUND ACCEPTED / REJECTED / PERCENT <span style="float:right;"><span class="ok_green">'.$worker_btc_r_acc.'</span> / <span class="no_red">'.$worker_btc_r_rej.'</span> / '.$worker_btc_r_per.'</span></div>'."\n";
-		echo	'			<div class="staggered">CHECKPOINT ACCEPTED / REJECTED / PERCENT <span style="float:right;"><span class="ok_green">'.$worker_btc_c_acc.'</span> / <span class="no_red">'.$worker_btc_c_rej.'</span> / '.$worker_btc_c_per.'</span></div>'."\n";
+		echo	'			<div class="btc_arrow"><b>BTC STATS</b><span class="stats"><span class="ok_green">ACCEPTED</span> / <span class="no_red">REJECTED</span> / <span>PERCENT</span></span></div>'."\n";
+		echo	'			<div class="staggered">TOTAL <span class="stats"><span class="ok_green">'.$worker_btc_t_acc.'</span> / <span class="no_red">'.$worker_btc_t_rej.'</span> / <span>'.$worker_btc_t_per.'</span></span></div>'."\n";
+		echo	'			<div class="staggered">ROUND <span class="stats"><span class="ok_green">'.$worker_btc_r_acc.'</span> / <span class="no_red">'.$worker_btc_r_rej.'</span> / <span>'.$worker_btc_r_per.'</span></span></div>'."\n";
+		echo	'			<div class="staggered">CHECKPOINT <span class="stats"><span class="ok_green">'.$worker_btc_c_acc.'</span> / <span class="no_red">'.$worker_btc_c_rej.'</span> / <span>'.$worker_btc_c_per.'</span></span></div>'."\n";
 		echo	'		</div>'."\n";
 		
 		echo	'		<div class="seven columns">'."\n";
-		echo	'			<div class="nmc_arrow"><b>NMC STATS</b></div>'."\n";
-		echo	'			<div class="staggered">TOTAL ACCEPTED / REJECTED / PRECENT <span style="float:right;"><span class="ok_green">'.$worker_nmc_t_acc.'</span> / <span class="no_red">'.$worker_nmc_t_rej.'</span> / '.$worker_nmc_t_per.'</span></div>'."\n";
-		echo	'			<div class="staggered">ROUND ACCEPTED / REJECTED / PERCENT <span style="float:right;"><span class="ok_green">'.$worker_nmc_r_acc.'</span> / <span class="no_red">'.$worker_nmc_r_rej.'</span> / '.$worker_nmc_r_per.'</span></div>'."\n";
-		echo	'			<div class="staggered">CHECKPOINT ACCEPTED / REJECTED / PERCENT <span style="float:right;"><span class="ok_green">'.$worker_nmc_c_acc.'</span> / <span class="no_red">'.$worker_nmc_c_rej.'</span> / '.$worker_nmc_c_per.'</span></div>'."\n";		
+		echo	'			<div class="nmc_arrow"><b>NMC STATS</b><span class="stats"><span class="ok_green">ACCEPTED</span> / <span class="no_red">REJECTED</span> / <span>PERCENT</span></span></div>'."\n";
+		echo	'			<div class="staggered">TOTAL <span style="float:right;"><span class="ok_green">'.$worker_nmc_t_acc.'</span> / <span class="no_red">'.$worker_nmc_t_rej.'</span> / <span>'.$worker_nmc_t_per.'</span></span></div>'."\n";
+		echo	'			<div class="staggered">ROUND <span style="float:right;"><span class="ok_green">'.$worker_nmc_r_acc.'</span> / <span class="no_red">'.$worker_nmc_r_rej.'</span> / <span>'.$worker_nmc_r_per.'</span></span></div>'."\n";
+		echo	'			<div class="staggered">CHECKPOINT <span style="float:right;"><span class="ok_green">'.$worker_nmc_c_acc.'</span> / <span class="no_red">'.$worker_nmc_c_rej.'</span> / <span>'.$worker_nmc_c_per.'</span></span></div>'."\n";		
 		echo	'		</div>'."\n";
 		
 		echo	'</div>'."\n";
