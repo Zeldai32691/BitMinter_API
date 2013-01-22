@@ -18,7 +18,6 @@
 // Get this from bitminter.com
 
 // $API_Key = '################################';
-$API_Key = 'WOKZ1ORDG5DNBSIOPFO5USRFIZJT4Q4X';
 
 // Script Timeout in Seconds
 
